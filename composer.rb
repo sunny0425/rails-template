@@ -38,7 +38,6 @@ say 'Applying figaro...'
 gem 'figaro'
 get_remote('config/application.yml.example')
 get_remote('config/application.yml.example', 'config/application.yml')
-get_remote('config/spring.rb')
 
 # bootstrap sass
 say 'Applying bootstrap3...'
@@ -73,9 +72,8 @@ end
 # initialize files
 # uploader directory
 # application.yml
-say 'Applying carrierwave & upyun...'
+say 'Applying carrierwave'
 gem 'carrierwave'
-gem 'carrierwave-upyun'
 get_remote('config/initializers/carrierwave.rb')
 get_remote('image_uploader.rb', 'app/uploaders/image_uploader.rb')
 
