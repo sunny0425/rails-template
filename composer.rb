@@ -39,7 +39,6 @@ say 'Applying figaro...'
 gem 'figaro'
 get_remote('config/application.yml.example')
 get_remote('config/application.yml.example', 'config/application.yml')
-get_remote('config/spring.rb')
 
 after_bundle do
   say "Stop spring if exsit"
@@ -87,6 +86,13 @@ say 'Applying active_storage...'
 after_bundle do
   rake 'active_storage:install'
 end
+# initialize files
+# uploader directory
+# application.yml
+say 'Applying carrierwave'
+gem 'carrierwave'
+get_remote('config/initializers/carrierwave.rb')
+get_remote('image_uploader.rb', 'app/uploaders/image_uploader.rb')
 
 # initialize files
 say 'Applying status page...'

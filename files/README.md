@@ -11,6 +11,7 @@ The source code of myapp
 * slim
 * high_voltage
 * active_storage
+* carriewave
 * sidekiq
 * kaminari
 * mina
